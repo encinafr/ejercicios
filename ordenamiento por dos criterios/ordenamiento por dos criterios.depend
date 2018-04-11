@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1523458912 source:c:\users\alumno\desktop\ordenamiento por dos criterios\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
