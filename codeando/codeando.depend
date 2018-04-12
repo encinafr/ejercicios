@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1523494998 source:c:\users\encin\desktop\codeando\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
