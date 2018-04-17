@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1523970997 source:c:\users\encin\desktop\ejercicio guia\main.c
+	<stdio.h>
+	<stdlib.h>
+
