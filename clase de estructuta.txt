@@ -1,0 +1,27 @@
+%[^\n] para tomar esoacios no uses gets usa esto
+dentro del for se puede usar n1[i]=n2[j] afuera no;
+validar que sea un numero:
+int i,numero;
+int flag=0;
+char dato[15];
+printf("Ingrese numero:");
+fflush(stdin);
+scanf("%s",dato);//strlen devuelve el largo de la cadena
+for(i=0;i<strlen(dato);i++){ //int isdigit(char) devuelvo un entero;
+	if(!isdigit(dato)[i]){   // !isdigit estoy diciendo si no es un numero;
+		flag=1;
+		break;
+	}
+		
+
+}if(flag==0){
+  numero=atoi(dato);
+}
+
+
+sprintf(cad,"%d %f",nro,prom) //coloca lo que tiene nro y promedio en cadena;
+
+atoi transforma una cadena a entero//funciona como el parseInt
+atol transforma una cadaena larga
+atof transfroma una cadena a float
+sprintf imprime 
