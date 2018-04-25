@@ -20,6 +20,7 @@ typedef struct
     float sueldo;
     eFecha fechaIngreso;
     int isEmpty;
+    int idSector;
 
 } eEmpleado;
 typedef struct
@@ -128,7 +129,7 @@ void mostrarEmpleados(eEmpleado vec[], int tam)
 
     system("cls");
     printf("---Lista de Empleados---\n\n");
-    printf("  Legajo  Nombre   Sexo   Sueldo   Fecha de Ingreso \n\n");
+    printf("  Legajo  Nombre   Sexo   Sueldo   Fecha de Ingreso  Id de sector\n\n");
     for(i=0; i< tam; i++)
     {
         if(vec[i].isEmpty == 0)
@@ -140,7 +141,7 @@ void mostrarEmpleados(eEmpleado vec[], int tam)
 
 void mostrarEmpleado(eEmpleado emp)
 {
-    printf("  %4d     %s     %c  %10.2f    %02d/%02d/%4d \n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaIngreso.dia, emp.fechaIngreso.mes, emp.fechaIngreso.anio );
+    printf("  %4d     %s     %c  %10.2f    %02d/%02d/%4d            %d\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.fechaIngreso.dia, emp.fechaIngreso.mes, emp.fechaIngreso.anio,emp.idSector );
 }
 
 int buscarLibre(eEmpleado vec[], int tam)
@@ -222,6 +223,9 @@ void altaEmpleado(eEmpleado vec[], int tam)
 
                    printf("Ingrese fecha de ingreso d m a: ");
                    scanf("%d %d %d", &nuevoEmpleado.fechaIngreso.dia, &nuevoEmpleado.fechaIngreso.mes, &nuevoEmpleado.fechaIngreso.anio);
+
+                   printf("Ingrese el id de sector: ");
+                   scanf("%d",&nuevoEmpleado.idSector);
 
                    vec[indice] = nuevoEmpleado;
 
