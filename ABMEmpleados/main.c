@@ -41,6 +41,7 @@ int buscarEmpleado(eEmpleado[], int, int);
 void bajaEmpleado(eEmpleado[], int);
 void hardCode(eSector[]);
 
+
 int main()
 {
     int salir = 0;
@@ -325,3 +326,34 @@ void hardCode(eSector sectores[]){
     sectores[4].isEmpty = 0;
     */
 }
+
+//funcion modificar
+
+/*agregar una funcion para listar todos los empleados
+tengo que recorrer el arrays de empleado con un for traigo el isSector
+pongo otro for y recorro el idSectopr  y muestro el id de ese nsector;
+
+for(i=0;i<100;i++){
+    for(j<0;j<5;j++){
+      if(emp[i].idSector==sec[j].id)  {
+      printf("%d %s %s",emp[i],emp[i].nombre,sec[j].descripcion);//pedende lo que quiera mostrar.
+      }
+    }
+}
+
+
+
+)
+listar los sectores por empleado.,
+
+recorro los sectores
+el segundo el j son los empleados
+
+for(i=0;i<5;i++){
+    for(j<0;j<100;j++){
+      if(sec][i].id==emp.idSector)  {
+      printf("%d %s %s",emp[j],emp[j].nombre,sec[i].descripcion);//pedende lo que quiera mostrar.
+      }
+    }
+}
+*/
