@@ -1,0 +1,58 @@
+#difine rrhh 1
+#define sistemas 2
+#define compras 3
+#define deposito 4
+
+
+para preguntar por estado podes usar un define
+#define libre 0
+#define ocupado 1
+
+if(sector[i].id==sistemas)// un ejemplo para estructura como usar el define;
+
+
+producto proveedor
+
+id Producto
+id Sector
+
+
+
+eEmpleado emp;
+eSector  sec;
+
+listar los empleados por secor
+
+for(i=o;i<tam_sec;i++){
+
+for(j=0;j<_emp;j++){
+	
+	if(sec[i].id==emp[j].idsector){
+		
+		printf("aca tenes imprimir el nombre del sector no el id");
+
+	}
+
+   }
+
+}
+
+
+
+listar todos los empleados del sector sistemas
+
+for(i=o;i<tam_sec;i++){
+
+for(j=0;j<_emp;j++){
+	
+	if(sec[i].id==emp[j].idsector && sec[i].id==sistemas){//aca preguntas por el sector que queres buscar para poder imprimir sus datos 
+		
+		printf("aca tenes imprimir que imprimir los empleados del sector ");
+
+	}
+
+   }
+
+}
+
+puedo pregunar y tomar el sector del cual quiero imprimir los empleados
