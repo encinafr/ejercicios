@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1525533278 source:c:\users\encin\desktop\crearfunciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"myfuncion.h"
+
+1525539480 source:c:\users\encin\desktop\crearfunciones\myfuncion.c
+	<stdio.h>
+	<stdlib.h>
+	"myfuncion.h"
+
+1525533119 c:\users\encin\desktop\crearfunciones\myfuncion.h
+
