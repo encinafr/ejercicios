@@ -47,8 +47,8 @@ int main()
 {
     int flag=0;
     char salir='s';
-
     int opcion;
+
     Usuario NewUsuario[TAM];
     Producto NewProducto[UNI];
     inicializarUsuario(NewUsuario,TAM);
@@ -83,8 +83,8 @@ int main()
                 borrarUsuario(NewUsuario,TAM);
                 break;
             case 4:
-                agregarProducto(NewProducto,UNI);
-                contadorproducto(NewProducto,UNI);
+
+                agregarProducto(NewProducto,UNI,NewUsuario,TAM);
                 break;
             case 5 :
                 modificaProducto(NewProducto,UNI);
@@ -97,10 +97,10 @@ int main()
             break;
             case 8 :
 
+                mostrarProductosPorID(NewProducto,UNI);
             break;
             case 9 :
                 mostrarProductos(NewProducto,UNI);
-
                 system("pause");
             break;
             case 10 :
@@ -112,8 +112,8 @@ int main()
                 salir='n';
             break;
              default:
-                            printf("Opcion incorrecta");
-                            system("pause");
+                        printf("Opcion incorrecta");
+                        system("pause");
 
         }
     }

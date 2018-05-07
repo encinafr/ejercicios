@@ -14,7 +14,6 @@ typedef struct {
     int estado;
     int edad;
     char sexo;
-    int stock
     int IDusuario;
     FN nacimiento;
     int calificacion;
@@ -24,7 +23,9 @@ typedef struct {
     char descripcion[CANT];
     char nombreProducto[CANT];
     int idProducto;
+    int idusuario;
     int estado2;
+    int stock;
 }Producto;
 
 void inicializarLibre(Usuario vec[] , int tam);
@@ -42,7 +43,9 @@ void mostrarProducto(Producto vec);
 void mostrarProductos(Producto vec[] , int tam);
 void modificaProducto(Producto vec[], int tam);
 void borrarProducto(Producto vec[], int tam);
-void agregarProducto(Producto vec[], int tam);
+void agregarProducto(Producto vec[], int tam,Producto arrays[], int tamanio);
+int comparaID(Producto vec[],int tam,int id);
+void mostrarProductosPorID(Producto vec[] , int tam);
 
 
 

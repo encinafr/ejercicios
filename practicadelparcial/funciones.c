@@ -441,16 +441,15 @@ void ordenarPorNombreP(Producto vec[] , int tam)
  * \param Tamaño del vactor
  */
 
-void agregarProducto(Producto vec[], int tam)
+void agregarProducto(Producto vec[], int tam,Producto arrays[], int tamanio)
 {
     int indice;
     int id;
     int existe;
     char nombreProducto[50];
     Producto nuevoProducto;
-
-
-
+    int idcargar;
+    int encuentra;
     system("cls");
     printf("---REGISTRAR PRODUCTO---\n\n");
 
@@ -463,11 +462,20 @@ void agregarProducto(Producto vec[], int tam)
     }
     else
     {
-        printf("Ingrese id de Producto: ");
-         fflush(stdin);
-        scanf("%d", &id);
+        printf("Ingrese su Id de usuario");
+                scanf("%d",&idcargar);
+                encuentra = buscarPorID(arrays,tamanio,idcargar);
+                if(encuentra == -1)
+                        {
+                            printf("\nEl id %d no esta dado de alta en el sistema\n", idcargar);
+                            system("pause");
+                        }else{
 
-        existe = buscarPorID(vec,tam,id);
+        printf("Ingrese id de Producto: ");
+        fflush(stdin);
+        scanf("%d",&id);
+
+        existe = buscarPorIDproducto(vec,tam,id);
 
         if(existe != -1)
         {
@@ -477,6 +485,7 @@ void agregarProducto(Producto vec[], int tam)
         }
        else{
                    nuevoProducto.idProducto = id;
+                   nuevoProducto.idusuario =idcargar;
                    nuevoProducto.estado2 = 0;
 
                    printf("Ingrese Nombre del Producto: ");
@@ -495,13 +504,15 @@ void agregarProducto(Producto vec[], int tam)
                    fflush(stdin);
                    scanf("%f", &nuevoProducto.precio);
                    }
+                    printf("Ingrese stock del producto");
+                    scanf("%d",&nuevoProducto.stock);
 
                     vec[indice]=nuevoProducto;
                    printf("\n Se registro correctamente!!!\n\n");
                     system("\npause\n");
 
            }
-
+    }
   }
 
    // printf("%s %s %s %d",nuevoUsuario.nombre,nuevoUsuario.apellido,nuevoUsuario.password,nuevoUsuario.edad);
@@ -514,8 +525,8 @@ void agregarProducto(Producto vec[], int tam)
 
 void mostrarProducto(Producto vec)
 {
-    printf("Nombre:\tIDproducto:\tDescripcion:\tPrecio\n");
-    printf("%s\t%d\t%s\t%.2f\t%d",vec.nombreProducto,vec.idProducto,vec.descripcion,vec.precio);
+    printf("Nombre:\tID:\tDescripcion:\tPrecio\tstock\n");
+    printf("%s\t%d\t%s\t%.2f\t%d",vec.nombreProducto,vec.idProducto,vec.descripcion,vec.precio,vec.stock);
 }
 /** \brief Recorre el vector y pregunta por el estado para imprimir solo los datos que esten cargados sin basura
  * \param vec Vector a recorrer
@@ -624,14 +635,15 @@ void modificaProducto(Producto vec[], int tam){
     int esta;
     char confirma;
     int salir = 0;
+    int fijate;
+
 
     system("cls");
     printf("---Modifica Producto---\n\n");
-
    printf("Ingrese ID de Producto: ");
         scanf("%d", &id);
 
-        esta = buscarPorID(vec, tam, id);
+        esta = buscarPorIDproducto(vec, tam, id);
 
         if(esta == -1)
         {
@@ -640,7 +652,7 @@ void modificaProducto(Producto vec[], int tam){
         }
         else{
 
-                mostrarProducto(vec[esta]);
+            mostrarProducto(vec[esta]);
 
         do{
             printf("\nConfirma modificacion? [s|n]: ");
@@ -651,7 +663,7 @@ void modificaProducto(Producto vec[], int tam){
 
         if(confirma == 's'){
             do{
-                switch(menuModifica()){
+                switch(menuModificaproducto()){
                     case 1:
                         printf("Ingrese el nuevo Id de producto: ");
                         scanf("%d" , &nuevoDatoProducto.idProducto);
@@ -664,16 +676,17 @@ void modificaProducto(Producto vec[], int tam){
                         strcpy(vec[esta].nombreProducto , nuevoDatoProducto.nombreProducto);
                         break;
                     case 3:
-                        printf("Ingrese el Descripcion: ");
+                        printf("Ingrese la Descripcion: ");
                         fflush(stdin);
-                        scanf("%s" , nuevoDatoProducto.descripcion);
+                        gets(nuevoDatoProducto.descripcion);
                         strcpy(vec[esta].descripcion , nuevoDatoProducto.descripcion);
                         break;
                     case 4:
                         printf("Ingrese nuevo precio: ");
                         scanf("%f",nuevoDatoProducto.precio);
                         vec[esta].precio = nuevoDatoProducto.precio;
-                    case 5:
+
+                     case 5:
                         salir = 1;
                         break;
                     default:
@@ -710,9 +723,52 @@ int menuModificaproducto()
     printf("3-Descripcion\n");
     printf("4-Precio\n");
     printf("5-Salir\n");
-    printf("\nIndique opcion: ");
+    printf("\nIndique opcion a modificar: ");
     scanf("%d", &opcion);
 
     return opcion;
 }
+/*
+int comparaID(Producto vecp[],int tam_producto,Usuario vec[],int tam_usuario,int id){
 
+  return indice;
+}
+*/
+int comparaID(Producto vec[],int tam,int id){
+ int indice = -1;
+    int i;
+    for(i=0; i < tam; i++)
+    {
+        if(vec[i].estado2 ==0 && id == vec[i].idusuario)
+        {
+            indice = i;
+            break;
+        }
+    }
+    return indice;
+
+
+}
+
+void mostrarProductosPorID(Producto vec[] , int tam)
+{
+
+    ordenarPorNombreP(vec, tam);
+    int idMostrar;
+    int i;
+    int buscaID;
+    printf("Ingrese el id de usuario: ");
+                scanf("%d",&idMostrar);
+  //  buscaID=comparaID(vec,tam,idMostrar);
+
+    //printf("Nombre:\tIDusuario:\tEdad:\tCalificacion\tPassword\tFecha De Nacimiento DIA: MES: ANIO:\n");
+
+    for(i=0 ; i < tam ; i++)
+    {
+        if(vec[i].estado2==0 &&  idMostrar==vec[i].idusuario)
+        {
+            mostrarProducto(vec[i]);
+            system("pause");
+        }
+    }
+}
