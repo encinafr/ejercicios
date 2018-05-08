@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1525782561 source:c:\users\encin\desktop\practicadelparcial\funciones.c
+1525785456 source:c:\users\encin\desktop\practicadelparcial\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
 
-1525708143 c:\users\encin\desktop\practicadelparcial\funciones.h
+1525784044 c:\users\encin\desktop\practicadelparcial\funciones.h
 
-1525777022 source:c:\users\encin\desktop\practicadelparcial\main.c
+1525784095 source:c:\users\encin\desktop\practicadelparcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"

@@ -43,8 +43,8 @@ void mostrarProducto(Producto vec);
 void mostrarProductos(Producto vec[] , int tam);
 void modificaProducto(Producto vec[], int tam);
 void borrarProducto(Producto vec[], int tam);
-void agregarProducto(Producto vec[], int tam,Producto arrays[], int tamanio);
-void mostrarProductosPorID(Producto vec[] , int tam);
+void agregarProducto(Producto vec[], int tam,Usuario arrays[], int tamanio);
+void mostrarProductosPorID(Producto vec[] , int tam,Usuario arrays[], int larg);
 void compraProducto(Producto vec[],int tam);
 
 

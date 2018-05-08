@@ -97,7 +97,7 @@ int main()
             break;
             case 8 :
 
-                mostrarProductosPorID(NewProducto,UNI);
+                mostrarProductosPorID(NewProducto,UNI,NewUsuario,TAM);
                 system("pause");
             break;
             case 9 :

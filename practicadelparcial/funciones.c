@@ -441,7 +441,7 @@ void ordenarPorNombreP(Producto vec[] , int tam)
  * \param Tamaño del vactor
  */
 
-void agregarProducto(Producto vec[], int tam,Producto arrays[], int tamanio)
+void agregarProducto(Producto vec[], int tam,Usuario arrays[], int tamanio)
 {
     int indice;
     int id;
@@ -730,33 +730,33 @@ int menuModificaproducto()
 }
 
 
-void mostrarProductosPorID(Producto vec[] , int tam)
+void mostrarProductosPorID(Producto vec[] , int tam,Usuario arrays[], int larg)
 {
 
     ordenarPorNombreP(vec, tam);
     int idMostrar;
     int i;
-    int buscaID;
+    int j;
+    int esta;
+    int estaProducto;
     printf("Ingrese el id de usuario: ");
                 scanf("%d",&idMostrar);
+    esta=buscarPorID(arrays,larg,idMostrar);
+    if(esta==-1){
+        printf("El usuario no esta registtrado");
+        system("pause");
+    }
 
-    for(i=0 ; i < tam ; i++)
+ for(i=0 ; i < tam ; i++)
     {
-        if(vec[i].estado2==0 &&  idMostrar==vec[i].idusuario)
+        if( idMostrar==vec[i].idusuario)
         {
             mostrarProducto(vec[i]);
             printf("\n");
 
         }
-            if( idMostrar!=vec[i].idusuario){
-                printf("El id no se encuentra registrado o aun no ah realizado publicaiones \n");
-                system("pause");
-                break;
-            }
-             if(vec[i].estado2==1 && idMostrar==vec[i].idusuario){
-                printf("El usuario no tiene publicaciones disponibles");
-             }
     }
+
 }
 /** \brief
  *
@@ -783,7 +783,7 @@ void mostrarProductosPorID(Producto vec[] , int tam)
     else{
             if(vec[busca].estado2==0){
                 compra = vec[busca].stock;
-                printf("a ver %d",compra);
+               // printf("se paso el valor %d",compra);
                 system("pause");
             }
            // printf("entro");
@@ -792,7 +792,7 @@ void mostrarProductosPorID(Producto vec[] , int tam)
                     system("pause");
                 } if(vec[busca].estado2==0 && vec[busca].stock>0){
                      compra=compra-1;
-                     printf("stock %d",compra);
+                    // printf("stock %d",compra);
                      nuevostock.stock=compra;
                     vec[busca].stock=nuevostock.stock;
                 }
