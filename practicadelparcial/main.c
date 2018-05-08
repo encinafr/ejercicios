@@ -93,7 +93,7 @@ int main()
                 borrarProducto(NewProducto,UNI);
             break;
             case 7 :
-                comparaProducto(NewProducto,UNI);
+                compraProducto(NewProducto,UNI);
             break;
             case 8 :
 

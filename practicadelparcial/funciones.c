@@ -765,7 +765,7 @@ void mostrarProductosPorID(Producto vec[] , int tam)
  * \return
  *
  */
- void comparaProducto(Producto vec[],int tam){
+ void compraProducto(Producto vec[],int tam){
  int idProduct;
  Producto nuevostock;
  int i;

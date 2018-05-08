@@ -45,7 +45,7 @@ void modificaProducto(Producto vec[], int tam);
 void borrarProducto(Producto vec[], int tam);
 void agregarProducto(Producto vec[], int tam,Producto arrays[], int tamanio);
 void mostrarProductosPorID(Producto vec[] , int tam);
-void comparaProducto(Producto vec[],int tam);
+void compraProducto(Producto vec[],int tam);
 
 
 
