@@ -44,8 +44,8 @@ void mostrarProductos(Producto vec[] , int tam);
 void modificaProducto(Producto vec[], int tam);
 void borrarProducto(Producto vec[], int tam);
 void agregarProducto(Producto vec[], int tam,Producto arrays[], int tamanio);
-int comparaID(Producto vec[],int tam,int id);
 void mostrarProductosPorID(Producto vec[] , int tam);
+void comparaProducto(Producto vec[],int tam);
 
 
 

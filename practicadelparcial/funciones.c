@@ -728,27 +728,7 @@ int menuModificaproducto()
 
     return opcion;
 }
-/*
-int comparaID(Producto vecp[],int tam_producto,Usuario vec[],int tam_usuario,int id){
 
-  return indice;
-}
-*/
-int comparaID(Producto vec[],int tam,int id){
- int indice = -1;
-    int i;
-    for(i=0; i < tam; i++)
-    {
-        if(vec[i].estado2 ==0 && id == vec[i].idusuario)
-        {
-            indice = i;
-            break;
-        }
-    }
-    return indice;
-
-
-}
 
 void mostrarProductosPorID(Producto vec[] , int tam)
 {
@@ -759,16 +739,67 @@ void mostrarProductosPorID(Producto vec[] , int tam)
     int buscaID;
     printf("Ingrese el id de usuario: ");
                 scanf("%d",&idMostrar);
-  //  buscaID=comparaID(vec,tam,idMostrar);
-
-    //printf("Nombre:\tIDusuario:\tEdad:\tCalificacion\tPassword\tFecha De Nacimiento DIA: MES: ANIO:\n");
 
     for(i=0 ; i < tam ; i++)
     {
         if(vec[i].estado2==0 &&  idMostrar==vec[i].idusuario)
         {
             mostrarProducto(vec[i]);
-            system("pause");
+            printf("\n");
+
         }
+            if( idMostrar!=vec[i].idusuario){
+                printf("El id no se encuentra registrado o aun no ah realizado publicaiones \n");
+                system("pause");
+                break;
+            }
+             if(vec[i].estado2==1 && idMostrar==vec[i].idusuario){
+                printf("El usuario no tiene publicaciones disponibles");
+             }
     }
 }
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+ void comparaProducto(Producto vec[],int tam){
+ int idProduct;
+ Producto nuevostock;
+ int i;
+ int busca;
+ int compra=0;
+
+   printf("Ingrese el id de Prodcuto: ");
+   scanf("%d",&idProduct);
+    busca=buscarPorIDproducto(vec,tam,idProduct);
+   if(busca==-1)
+       {
+        printf("El producto que desea comprar no existe\n");
+        system("pause");
+       }
+    else{
+            if(vec[busca].estado2==0){
+                compra = vec[busca].stock;
+                printf("a ver %d",compra);
+                system("pause");
+            }
+           // printf("entro");
+                if(vec[busca].estado2==0 && vec[busca].stock<0){
+                    printf("El producto no tiene stock disponible");
+                    system("pause");
+                } if(vec[busca].estado2==0 && vec[busca].stock>0){
+                     compra=compra-1;
+                     printf("stock %d",compra);
+                     nuevostock.stock=compra;
+                    vec[busca].stock=nuevostock.stock;
+                }
+        }
+
+
+    }
+
+
+

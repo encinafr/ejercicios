@@ -93,11 +93,12 @@ int main()
                 borrarProducto(NewProducto,UNI);
             break;
             case 7 :
-
+                comparaProducto(NewProducto,UNI);
             break;
             case 8 :
 
                 mostrarProductosPorID(NewProducto,UNI);
+                system("pause");
             break;
             case 9 :
                 mostrarProductos(NewProducto,UNI);
