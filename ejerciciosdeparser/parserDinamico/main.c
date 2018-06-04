@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+/*
+ Deberias armar funciones para acceder alos campos a travez de punteros
+ terminalo en casa
+ hay un ejemplo en el pdf
+*/
 typedef struct{
  int id;
  int anio;
