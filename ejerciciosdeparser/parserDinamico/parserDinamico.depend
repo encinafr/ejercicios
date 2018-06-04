@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1528123390 source:c:\users\alumno\desktop\parserdinamico\main.c
+	<stdio.h>
+	<stdlib.h>
+
