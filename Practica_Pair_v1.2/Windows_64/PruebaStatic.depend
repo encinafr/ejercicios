@@ -46,19 +46,3 @@
 	"ArrayList.h"
 	"Employee.h"
 
-1477571236 source:c:\users\alumno\desktop\hoy\practica_pair_v1.2\windows_64\employee.c
-	<stdio.h>
-	<stdlib.h>
-	"ArrayList.h"
-	"Employee.h"
-
-1463604778 c:\users\alumno\desktop\hoy\practica_pair_v1.2\windows_64\arraylist.h
-
-1477571236 c:\users\alumno\desktop\hoy\practica_pair_v1.2\windows_64\employee.h
-
-1464384470 source:c:\users\alumno\desktop\hoy\practica_pair_v1.2\windows_64\parser.c
-	<stdio.h>
-	<stdlib.h>
-	"ArrayList.h"
-	"Employee.h"
-
