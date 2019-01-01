@@ -1,0 +1,51 @@
+//Crear 
+ create database tutorial
+//Eliminar
+drop database tutorial
+//Crear tablas
+
+create table usuario
+(
+  id_usuario int not null,
+  nombre varchar(50)
+)
+
+//Eliminar tablas 
+drop table usuario
+
+//insertar
+
+insert into usuario1 values(1,'Miguel',22);
+
+//Consulta, el * significa todos los campos pero tambien puedo indicar un campo en especifico
+
+select * from usuario1 // utilizando where puede condicionar que registros quiero elegir
+
+/*
+delete --> elimina registros
+drop --> elimina la tabla
+truncate --> elimina lod registros
+
+*/
+  // Atualizar
+update usuario1 set nombre = 'pepe';
+/*
+   identity pot defecto comienzA en 1 y se incrementa en 1
+   permite nulos,no permite modificación
+*/
+
+//para saber el identity
+select IDENT_SEED('usuario1');
+select IDENT_INCR('usuario1');//Para saber el incremento
+para indicar el incremento se le pasa como parametro ej: identity(56,3)
+
+para poder permitir cambiar el ident se escribe
+set identity_insert usuario1 on;
+insert into usuario1(id_usuario,nombre) values(77,'Jose');
+//funciones de agregado
+count --> cuenta 
+sum --> suma
+min --> minimo
+max --> maximo
+
+select count(nombre) from libros 
